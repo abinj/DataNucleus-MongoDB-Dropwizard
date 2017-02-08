@@ -5,7 +5,6 @@ import io.dropwizard.lifecycle.Managed;
 import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
-import java.util.Properties;
 
 
 /**
