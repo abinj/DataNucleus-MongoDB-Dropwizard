@@ -133,6 +133,12 @@
             <artifactId>datanucleus-api-json</artifactId>
             <version>3.0.2</version>
         </dependency>
+        <dependency>
+            <groupId>org.datanucleus</groupId>
+            <artifactId>datanucleus-mongodb</artifactId>
+            <version>5.0.3</version>
+        </dependency>
+
 
     </dependencies>
 

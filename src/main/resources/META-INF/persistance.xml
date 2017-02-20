@@ -9,9 +9,10 @@
         <class>com.abinj.datanucleusmongo.model.User</class>
         <exclude-unlisted-classes/>
         <properties>
-            <property name="datanucleus.ConnectionURL" value="mongodb:localhost:27017/datanucleus" />
-            <property name="datanucleus.storeManagerType" value="mongodb" />
-            <property name="datanucleus.autoCreateSchema" value="true" />
+            <!-- ENABLE THESE FOR MONGODB -->
+            <property name="javax.jdo.option.ConnectionURL" value="mongodb:/nucleus1"/>
+            <property name="javax.jdo.option.Mapping" value="mongodb"/>
+            <property name="datanucleus.schema.autoCreateAll" value="true"/>
         </properties>
     </persistence-unit>
 

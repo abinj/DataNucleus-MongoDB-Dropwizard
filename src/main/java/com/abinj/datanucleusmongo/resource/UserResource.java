@@ -15,7 +15,7 @@ import javax.ws.rs.core.Response;
 public class UserResource {
 
     @Path("/insert")
-    @POST
+    @PUT
     public Response insertUser(User user) {
         User persistentObject = MongoUtil.getPm().makePersistent(user);
         return Response.ok(persistentObject).status(Response.Status.OK).build();
