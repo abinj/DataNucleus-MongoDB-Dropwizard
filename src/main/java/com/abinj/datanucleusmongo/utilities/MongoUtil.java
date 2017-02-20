@@ -38,8 +38,8 @@ public class MongoUtil implements Managed {
 //                properties.setProperty("javax.jdo.option.ConnectionURL","jdbc:mysql://localhost/myDB");
 //                properties.setProperty("javax.jdo.option.ConnectionUserName","login");
 //                properties.setProperty("javax.jdo.option.ConnectionPassword","password");
-                pmf = JDOHelper.getPersistenceManagerFactory("mongoUnit");
-                pm = pmf.getPersistenceManager();
+                // Create a PersistenceManagerFactory for this datastore
+                pmf = JDOHelper.getPersistenceManagerFactory("Tutorial");
                 return pm;
             } catch (Exception e) {
                 e.printStackTrace();
