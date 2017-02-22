@@ -1,5 +1,6 @@
 package com.abinj.datanucleusmongo.resource;
 
+import com.abinj.datanucleusmongo.dao.UserDAO;
 import com.abinj.datanucleusmongo.model.User;
 import com.abinj.datanucleusmongo.utilities.MongoUtil;
 
@@ -16,9 +17,9 @@ public class UserResource {
 
     @Path("/insert")
     @PUT
-    public Response insertUser(User user) {
-        User persistentObject = MongoUtil.getPm().makePersistent(user);
-        return Response.ok(persistentObject).status(Response.Status.OK).build();
+    public Response insertUser() {
+        UserDAO.addProduct();
+        return Response.ok().status(Response.Status.OK).build();
     }
 
 //    @Path("/get-user")

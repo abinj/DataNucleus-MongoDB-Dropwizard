@@ -40,6 +40,7 @@ public class MongoUtil implements Managed {
 //                properties.setProperty("javax.jdo.option.ConnectionPassword","password");
                 // Create a PersistenceManagerFactory for this datastore
                 pmf = JDOHelper.getPersistenceManagerFactory("Tutorial");
+                pm = pmf.getPersistenceManager();
                 return pm;
             } catch (Exception e) {
                 e.printStackTrace();

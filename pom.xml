@@ -20,6 +20,18 @@
             <url>http://download.java.net/maven/1/</url>
             <layout>legacy</layout>
         </repository>
+
+        <repository>
+            <id>DN_Nightly_M2_Repo</id>
+            <url>http://www.datanucleus.org/downloads/maven2-nightly/</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+
     </repositories>
     <pluginRepositories>
         <pluginRepository>
@@ -47,6 +59,8 @@
                     <filters>
                         <filter>
                             <artifact>*:*</artifact>
+                            <include>tutorial.ods</include>
+                            <include>tutorial.xls</include>
                             <excludes>
                             </excludes>
                         </filter>
@@ -76,19 +90,20 @@
                 <artifactId>datanucleus-maven-plugin</artifactId>
                 <version>5.0.1</version>
                 <configuration>
-                    <api>REST</api>
-                    <persistenceUnitName>mongoUnit</persistenceUnitName>
-                    <verbose>true</verbose>
+                    <api>JDO</api>
+                    <persistenceUnitName>Tutorial</persistenceUnitName>
+                    <verbose>false</verbose>
                 </configuration>
                 <executions>
                     <execution>
-                        <phase>process-classes</phase>
+                        <phase>compile</phase>
                         <goals>
                             <goal>enhance</goal>
                         </goals>
                     </execution>
                 </executions>
             </plugin>
+
         </plugins>
     </build>
 
@@ -100,23 +115,14 @@
         </dependency>
         <dependency>
             <groupId>org.datanucleus</groupId>
-            <artifactId>datanucleus-api-rest</artifactId>
-            <version>5.0.2</version>
+            <artifactId>datanucleus-core</artifactId>
+            <version>5.0.7</version>
         </dependency>
+
         <dependency>
             <groupId>org.datanucleus</groupId>
             <artifactId>datanucleus-api-jdo</artifactId>
             <version>5.0.7</version>
-        </dependency>
-        <dependency>
-            <groupId>org.datanucleus</groupId>
-            <artifactId>datanucleus-api-jpa</artifactId>
-            <version>5.0.7</version>
-        </dependency>
-        <dependency>
-            <groupId>org.datanucleus</groupId>
-            <artifactId>datanucleus-mongodb</artifactId>
-            <version>5.0.3</version>
         </dependency>
         <dependency>
             <groupId>org.datanucleus</groupId>
@@ -130,14 +136,15 @@
         </dependency>
         <dependency>
             <groupId>org.datanucleus</groupId>
-            <artifactId>datanucleus-api-json</artifactId>
-            <version>3.0.2</version>
-        </dependency>
-        <dependency>
-            <groupId>org.datanucleus</groupId>
             <artifactId>datanucleus-mongodb</artifactId>
             <version>5.0.3</version>
         </dependency>
+        <dependency>
+            <groupId>org.datanucleus</groupId>
+            <artifactId>datanucleus-maven-plugin</artifactId>
+            <version>5.0.2</version>
+        </dependency>
+
 
 
     </dependencies>
